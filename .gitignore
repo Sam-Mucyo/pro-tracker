@@ -1,0 +1,25 @@
+.DS_Store
+
+# Byte-compiled / cached / generated files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# pyenv
+.trackerenv/
+.python-version
+.env
+.venv
+
+# Other files to ignore
+*.log
+*.tmp
+*.temp 
