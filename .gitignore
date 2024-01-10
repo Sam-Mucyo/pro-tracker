@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 
 # Byte-compiled / cached / generated files
 __pycache__/
