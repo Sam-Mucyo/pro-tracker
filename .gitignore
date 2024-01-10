@@ -23,3 +23,10 @@ build/
 *.log
 *.tmp
 *.temp 
+
+# pytest
+.pytest_cache/
+.coverage
+
+# mypy
+.mypy_cache/

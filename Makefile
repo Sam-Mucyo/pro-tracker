@@ -23,10 +23,10 @@ install: venv # Install project dependencies.
 
 test: # Run all tests.
 	@echo "Running tests w/ coverage..."
-	@$(VENV)/pytest --cov=filehandlerbackend --cov-report term-missing --cov-fail-under=90
+	@$(VENV)/pytest --cov=tasks --cov-report term-missing --cov-fail-under=90
 
 # Clean up the project.
-.PHONY: clean clear
+.PHONY: clean
 
 clean: # Clean up cache files and directories (recommended).
 	@find . -name "*.pyc" -exec rm -f {} \;
@@ -49,17 +49,17 @@ clean: # Clean up cache files and directories (recommended).
 
 .PHONY: install-dev-tools
 install-dev-tools: # Install code health tools: black, isort, etc.
-	@$(VENV)/pip3 install -U -r devtools_requirements.txt
+	@$(VENV)/pip3 install -U -r dev_requirements.txt
 
 .PHONY: report-issues
 report-issues: # Report code health issues (^-^)
-	-@$(VENV)/mypy src/;
-	-@$(VENV)/pylint src/;
+	-@$(VENV)/mypy tasks/;
+	-@$(VENV)/pylint tasks/;
 
 .PHONY: fix-style
 fix-style: # Fix style issues :)
-	@$(VENV)/isort src/ tests/;
-	@$(VENV)/black -l 79 src/ tests/;
+	@$(VENV)/isort tasks/ tests/;
+	@$(VENV)/black -l 79 tasks/ tests/;
 
 .PHONY: style
 style: # Fix style and then report issues.
